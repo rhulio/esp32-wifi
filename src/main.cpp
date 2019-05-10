@@ -1,5 +1,5 @@
-#include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
 
 const char* ssid = "# Cipriano";
 const char* senha = "globo321";
@@ -14,7 +14,7 @@ String float2str(float x, byte precision = 2) {
 
 bool conectaWiFi() {
   if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("[WiFi] Conectando...");
+    Serial.println("[WiFi] Conectando à "+String(ssid)+"...");
     delay(250);
     return 0;
   } else
