@@ -46,10 +46,10 @@ void setup() {
   Serial.println("[ESP] Iniciando dispositivo...");
 
   //WiFi.persistent(false);
-  //WiFi.disconnect(true);
+  WiFi.disconnect(true);
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, senha);
-  //WiFi.setSleep(false);
+  WiFi.setSleep(false);
   
   conectaWiFi();
     
@@ -83,11 +83,10 @@ unsigned long tempoTotal = 0;
   
 void loop() {
   if(conectaWiFi()){
-    unsigned long tempoInicial = millis();
-
     //String dadosGet;
     String sinal = String(WiFi.RSSI());
-    
+
+    unsigned long tempoInicial = millis();    
     /*
     String dadosGet = "";
 
